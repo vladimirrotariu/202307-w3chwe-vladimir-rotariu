@@ -1,4 +1,4 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 
 class AppComponent extends Component {
   public listNavigationControls: HTMLUListElement;
@@ -13,8 +13,7 @@ class AppComponent extends Component {
   }
 
   render() {
-    const bodyElement = document.querySelector("body")!;
-    bodyElement.innerHTML = `
+    this.containerElement.innerHTML = `
     <header class="header">
     <header/>
     `;
