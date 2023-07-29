@@ -3,8 +3,8 @@ import Component from "../Component/Component.js";
 class NavigationElementComponent extends Component {
   constructor(
     parentElement: Element,
-    private readonly tagNavigationElement: string,
-    private readonly textNavigationElement: string
+    public readonly tagNavigationElement: string,
+    public readonly textNavigationElement: string
   ) {
     const tag = "li";
     super(parentElement, tag);
