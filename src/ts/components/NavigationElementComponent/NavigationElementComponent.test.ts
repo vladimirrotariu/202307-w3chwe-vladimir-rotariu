@@ -12,9 +12,13 @@ describe("Given a NavigationElementComponent component that will be part of the 
         tagNavigationElement,
         textNavigationElement
       );
+      navigationElementComponent.render();
+      const buttonElement =
+        containerElement.querySelector(tagNavigationElement)!;
+      const buttonText = buttonElement.textContent!;
 
-      expect(navigationElementComponent.tagNavigationElement).toBe("button");
-      expect(textNavigationElement).toBe("Next 8 pokemons &rArr;");
+      expect(buttonElement).toBeInstanceOf(HTMLButtonElement);
+      expect(buttonText).toBe("Next 8 pokemons ⇒");
     });
   });
 
@@ -29,9 +33,13 @@ describe("Given a NavigationElementComponent component that will be part of the 
         tagNavigationElement,
         textNavigationElement
       );
+      navigationElementComponent.render();
+      const buttonElement =
+        containerElement.querySelector(tagNavigationElement)!;
+      const buttonText = buttonElement.textContent!;
 
-      expect(navigationElementComponent.tagNavigationElement).toBe("button");
-      expect(textNavigationElement).toBe("&lArr; Previous 8 pokemons");
+      expect(buttonElement).toBeInstanceOf(HTMLButtonElement);
+      expect(buttonText).toBe("⇐ Previous 8 pokemons");
     });
   });
 
@@ -46,9 +54,12 @@ describe("Given a NavigationElementComponent component that will be part of the 
         tagNavigationElement,
         textNavigationElement
       );
+      navigationElementComponent.render();
+      const linkElement = containerElement.querySelector(tagNavigationElement)!;
+      const linkText = linkElement.textContent!;
 
-      expect(navigationElementComponent.tagNavigationElement).toBe("a");
-      expect(textNavigationElement).toBe("Return to list of pokemons");
+      expect(linkElement).toBeInstanceOf(HTMLAnchorElement);
+      expect(linkText).toBe("Return to list of pokemons");
     });
   });
 });
