@@ -2,21 +2,22 @@ import { type Pokemon } from "../../types/types.js";
 import Component from "../Component/Component.js";
 
 class PokemonInfoComponent extends Component {
-  constructor(parentElement, private readonly pokemon: Pokemon) {
+  constructor(parentElement: Element, private readonly pokemon: Pokemon) {
     const tag = "main";
     const className = "pokemon";
     super(parentElement, tag, className);
   }
 
   render() {
+    this.parentElement.append(this.element);
+
     const pokemonAbilitiesListItemElements = this.pokemon.abilities
       .map((ability) => {
         const pokemonAbilityListItemElement = `
       <li>
-        <span>${ability.nameAbility.toUpperCase}:${
+        <span>${ability.nameAbility.toUpperCase()} ${
           ability.visibilityAbility ? "visible" : "hidden"
-        }
-        </span>
+        }</span>
       </li>
       `;
         return pokemonAbilityListItemElement;
@@ -30,7 +31,7 @@ class PokemonInfoComponent extends Component {
       }" width="96" height="96" alt="A picture of ${this.pokemon.name}">
     </div>
     <div class="pokemon__name">
-      <h2>${this.pokemon.name}</h2>
+      <h2>${this.pokemon.name.toUpperCase()}</h2>
     </div>
     <div class="pokemon__abilities">
       <h2>Abilities</h2>

@@ -1,5 +1,5 @@
 import { type PokemonLinks } from "../../types/types";
-import ListComponent from "./ListComponent";
+import ListComponent from "./ListComponent.js";
 
 describe("Given a ListComponent component", () => {
   describe("When given two pokemon names, 'bulbasaur' and 'charmander'", () => {
