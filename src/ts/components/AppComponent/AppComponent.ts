@@ -13,17 +13,12 @@ class AppComponent extends Component {
   }
 
   render() {
-    this.containerElement.innerHTML = `
-    <header class="header">
-    <header/>
-    `;
+    this.containerElement.append(this.parentElement);
 
     this.parentElement.append(this.element);
 
-    const headerElement = document.querySelector(".header")!;
-    headerElement.append(this.parentElement);
-
     this.listNavigationControls = document.createElement("ul");
+    this.listNavigationControls.className = "navbar__controls";
     this.element.append(this.listNavigationControls);
   }
 }
