@@ -12,17 +12,18 @@ class ListComponent extends Component {
   }
 
   render() {
-    this.pokemonLinks.forEach((PokemonLink) => {
-      const listItemTag = "li";
-      const listItemElement = document.createElement(listItemTag);
-      this.element.append(listItemElement);
+    this.parentElement.append(this.element);
 
-      const linkTag = "a";
-      const linkItemElement = document.createElement(linkTag);
-      listItemElement.append(linkItemElement);
-      linkItemElement.href = PokemonLink.url;
-      linkItemElement.text = PokemonLink.name;
+    let pokemonListElements = "";
+    this.pokemonLinks.forEach((pokemonLink) => {
+      const anchorElement = `
+      <li>
+        <a><img src="${pokemonLink.url}">${pokemonLink.name.toUpperCase()}</a>
+      </li>
+      `;
+      pokemonListElements += anchorElement;
     });
+    this.element.innerHTML = pokemonListElements;
   }
 }
 
