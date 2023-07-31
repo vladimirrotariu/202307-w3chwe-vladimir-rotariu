@@ -3,18 +3,23 @@ import Component from "../Component/Component.js";
 class NavigationElementComponent extends Component {
   constructor(
     parentElement: Element,
-    public readonly tagNavigationElement: string,
-    public readonly textNavigationElement: string
+    public readonly textNavigationElement: string,
+    private readonly actionOnClick: () => void
   ) {
     const tag = "li";
-    super(parentElement, tag);
+    const className = "controls__navigation-element";
+    super(parentElement, tag, className);
   }
 
   render() {
     this.parentElement.append(this.element);
     this.element.innerHTML = `
-    <${this.tagNavigationElement}>${this.textNavigationElement}</${this.tagNavigationElement}>
+    <button class="button">${this.textNavigationElement}</button>
     `;
+    const buttonElement = this.element.querySelector(".button")!;
+    buttonElement.addEventListener("click", () => {
+      this.actionOnClick();
+    });
   }
 }
 
