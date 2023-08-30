@@ -1,0 +1,105 @@
+@import "utils/variables";
+@import "utils/resets";
+
+body {
+  font-family: $font-family;
+
+  .container-fluid {
+    padding: 0;
+  }
+}
+
+header {
+  background-color: $primary-color;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $standard-padding;
+
+    a:focus, button:focus {
+      outline: 3px solid $outline-color;
+    }
+  }
+
+  .navbar__controls {
+    display: flex;
+    gap: $gap-standard;
+
+    @media (max-width: $medium-screen) {
+      flex-direction: column;
+    }
+
+    .controls__navigation-element {
+      padding: $small-padding $standard-padding;
+
+      @media (max-width: $small-screen) {
+        padding: $small-padding;
+      }
+    }
+
+    .button {
+      background-color: $primary-color;
+      color: $button-text-color;
+      padding: $small-padding $standard-padding;
+      border: none;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+main {
+  .pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $gap-standard;
+
+    @media (max-width: $extra-small-screen) {
+      gap: $gap-medium;
+    }
+
+    @media (max-width: $medium-screen) {
+      gap: $gap-small;
+    }
+
+    @media (max-width: $small-screen) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    li {
+      background-color: $card-background;
+      padding: $standard-padding;
+      box-shadow: $small-shadow;
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: $hover-shadow;
+      }
+
+      &:focus-within {
+        box-shadow: $focus-box-shadow;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:focus {
+        outline: 3px solid $outline-color;
+      }
+    }
+
+    img {
+      max-width: $image-width;
+      height: $image-height;
+    }
+  }
+}
