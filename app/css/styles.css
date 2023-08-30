@@ -32,6 +32,7 @@ a {
 
 body {
   font-family: "Roboto", Arial, sans-serif;
+  font-size: 1rem;
 }
 body .container-fluid {
   padding: 0;
@@ -47,11 +48,12 @@ header .navbar {
   padding: 1rem;
 }
 header .navbar a:focus, header .navbar button:focus {
-  outline: 3px solid #aaa;
+  outline: 3px solid #93e663;
 }
 header .navbar__controls {
   display: flex;
   gap: 1rem;
+  width: 80%;
 }
 @media (max-width: 992px) {
   header .navbar__controls {
@@ -70,7 +72,9 @@ header .navbar__controls .button {
   background-color: #007bff;
   color: #fff;
   padding: 0.5rem 1rem;
-  border: none;
+  border: 2px;
+  border-color: white;
+  border-radius: 20px;
   cursor: pointer;
 }
 header .navbar__controls .button:hover, header .navbar__controls .button:focus {
@@ -82,6 +86,7 @@ main .pokemon-list {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  margin-top: 10px;
 }
 @media (max-width: 1200px) {
   main .pokemon-list {
@@ -100,9 +105,15 @@ main .pokemon-list {
   }
 }
 main .pokemon-list li {
-  background-color: #fff;
+  background-color: #79efb4;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 240px;
+  height: 240px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 main .pokemon-list li:hover {
@@ -111,16 +122,24 @@ main .pokemon-list li:hover {
 main .pokemon-list li:focus-within {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
+main .pokemon-list h2 {
+  width: 90%;
+  height: 10%;
+  font-size: 1.2rem;
+  justify-content: center;
+}
 main .pokemon-list a {
   text-decoration: none;
   color: inherit;
+  width: 200px;
+  height: 200px;
 }
 main .pokemon-list a:focus {
-  outline: 3px solid #aaa;
+  outline: 3px solid #93e663;
 }
 main .pokemon-list img {
-  max-width: 200px;
-  height: 200px;
+  max-width: 180px;
+  height: 180px;
 }
 
 /*# sourceMappingURL=styles.css.map */

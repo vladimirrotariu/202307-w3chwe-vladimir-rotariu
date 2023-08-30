@@ -14,7 +14,7 @@ class NavigationElementComponent extends Component {
   render() {
     this.parentElement.append(this.element);
     this.element.innerHTML = `
-    <button class="button">${this.textNavigationElement}</button>
+    <a class="button">${this.textNavigationElement}</a>
     `;
     const buttonElement = this.element.querySelector(".button")!;
     buttonElement.addEventListener("click", () => {
