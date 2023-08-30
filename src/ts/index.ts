@@ -6,7 +6,7 @@ import { pokemonLinksTesting } from "./utils/testData.js";
 const appComponent = new AppComponent();
 appComponent.render();
 
-const textNavigationElementNext = "Next 8 pokemons &rArr;";
+const textNavigationElementNext = "NEXT 8 pokemons";
 const navigationElementComponentNext = new NavigationElementComponent(
   appComponent.listNavigationControls,
   textNavigationElementNext,
@@ -14,7 +14,7 @@ const navigationElementComponentNext = new NavigationElementComponent(
 );
 navigationElementComponentNext.render();
 
-const textNavigationElementPrevious = "&lArr; Previous 8 pokemons";
+const textNavigationElementPrevious = "PREVIOUS 8 pokemons";
 const navigationElementComponentPrevious = new NavigationElementComponent(
   appComponent.listNavigationControls,
   textNavigationElementPrevious,

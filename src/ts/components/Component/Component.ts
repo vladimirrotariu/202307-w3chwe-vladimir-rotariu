@@ -1,6 +1,6 @@
 abstract class Component {
   readonly element: Element;
-  readonly containerElement = document.querySelector(".container")!;
+  readonly containerElement = document.querySelector(".container-fluid")!;
 
   constructor(
     protected readonly parentElement: Element,
@@ -11,11 +11,11 @@ abstract class Component {
     this.element.className = className;
   }
 
-  abstract render(): void;
-
-  protected remove(): void {
+  public remove(): void {
     this.element.remove();
   }
+
+  public abstract render(): void;
 }
 
 export default Component;

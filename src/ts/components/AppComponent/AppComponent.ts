@@ -1,7 +1,7 @@
 import Component from "../Component/Component.js";
 
 class AppComponent extends Component {
-  public listNavigationControls: HTMLUListElement;
+  public listNavigationControls = document.createElement("ul");;
 
   constructor() {
     const parentElementTag = "header";
@@ -17,7 +17,6 @@ class AppComponent extends Component {
 
     this.parentElement.append(this.element);
 
-    this.listNavigationControls = document.createElement("ul");
     this.listNavigationControls.className = "navbar__controls";
     this.element.append(this.listNavigationControls);
   }

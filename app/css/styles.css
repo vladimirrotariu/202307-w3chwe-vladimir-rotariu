@@ -1,0 +1,126 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: white;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+}
+body .container-fluid {
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+header .navbar a:focus, header .navbar button:focus {
+  outline: 3px solid #aaa;
+}
+header .navbar__controls {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 992px) {
+  header .navbar__controls {
+    flex-direction: column;
+  }
+}
+header .navbar__controls .controls__navigation-element {
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 768px) {
+  header .navbar__controls .controls__navigation-element {
+    padding: 0.5rem;
+  }
+}
+header .navbar__controls .button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+header .navbar__controls .button:hover, header .navbar__controls .button:focus {
+  background-color: #0062cc;
+}
+
+main .pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+@media (max-width: 1200px) {
+  main .pokemon-list {
+    gap: 0.8rem;
+  }
+}
+@media (max-width: 992px) {
+  main .pokemon-list {
+    gap: 0.6rem;
+  }
+}
+@media (max-width: 768px) {
+  main .pokemon-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+main .pokemon-list li {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+main .pokemon-list li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+main .pokemon-list li:focus-within {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+main .pokemon-list a {
+  text-decoration: none;
+  color: inherit;
+}
+main .pokemon-list a:focus {
+  outline: 3px solid #aaa;
+}
+main .pokemon-list img {
+  max-width: 200px;
+  height: 200px;
+}
+
+/*# sourceMappingURL=styles.css.map */

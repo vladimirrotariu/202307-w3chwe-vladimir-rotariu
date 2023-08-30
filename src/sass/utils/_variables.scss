@@ -1,0 +1,29 @@
+// Font
+$font-family: 'Roboto', Arial, sans-serif;
+
+// Colors
+$primary-color: #007bff;
+$button-text-color: #fff;
+$outline-color: #aaa;
+$card-background: #fff;
+
+// Padding and Spacing
+$standard-padding: 1rem;
+$small-padding: 0.5rem;
+$gap-standard: 1rem;
+$gap-medium: 0.8rem;
+$gap-small: 0.6rem;
+
+// Breakpoints
+$extra-small-screen: 1200px;
+$medium-screen: 992px;
+$small-screen: 768px;
+
+// Box Shadows
+$small-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+$focus-box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+
+// Image Dimensions
+$image-width: 200px;
+$image-height: 200px;
