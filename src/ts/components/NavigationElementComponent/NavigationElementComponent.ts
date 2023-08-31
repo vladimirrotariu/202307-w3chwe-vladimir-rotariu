@@ -3,8 +3,8 @@ import Component from "../Component/Component.js";
 class NavigationElementComponent extends Component {
   constructor(
     parentElement: Element,
-    public readonly textNavigationElement: string,
-    private readonly actionOnClick: () => void
+    private readonly textNavigationElement: string,
+    private readonly actionOnClick = console.clear,
   ) {
     const tag = "li";
     const className = "controls__navigation-element";

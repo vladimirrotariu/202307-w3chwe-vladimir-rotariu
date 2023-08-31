@@ -25,7 +25,8 @@ describe("Given a ListComponent component", () => {
         pokemonLinks
       );
       listComponent.render();
-      const linkElements = containerElement.querySelectorAll("a");
+      
+      const linkElements = containerElement.querySelectorAll("h2");
       const linkTexts: string[] = [];
       linkElements.forEach((linkElement) => {
         const linkText = linkElement.textContent!;

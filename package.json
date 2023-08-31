@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "sass src/sass:app/css && vite",
-    "test": "jest --verbose",
-    "test:dev": "jest --watchAll",
+    "test:coverage": "vitest run --coverage --passWithNoTests",
     "build": "sass src/sass:app/css && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
