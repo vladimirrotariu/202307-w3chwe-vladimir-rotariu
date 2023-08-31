@@ -12,10 +12,11 @@ describe("Given a NavigationElementComponent component that will be part of the 
         console.log
       );
       navigationElementComponent.render();
+
       const buttonElement = containerElement.querySelector(".button")!;
       const buttonText = buttonElement.textContent!;
 
-      expect(buttonElement).toBeInstanceOf(HTMLButtonElement);
+      expect(buttonElement).toBeInstanceOf(HTMLAnchorElement);
       expect(buttonText).toBe("Next 8 pokemons ⇒");
     });
   });
@@ -23,7 +24,6 @@ describe("Given a NavigationElementComponent component that will be part of the 
   describe("When given a text '&lArr; Previous 8 pokemons'", () => {
     test("Then it should have a button that shows '&lArr; Previous 8 pokemons'", () => {
       const containerElement = document.createElement("div");
-      const tagNavigationElement = "button";
       const textNavigationElement = "&lArr; Previous 8 pokemons";
 
       const navigationElementComponent = new NavigationElementComponent(
@@ -32,11 +32,12 @@ describe("Given a NavigationElementComponent component that will be part of the 
         console.log
       );
       navigationElementComponent.render();
+
       const buttonElement =
-        containerElement.querySelector(tagNavigationElement)!;
+        containerElement.querySelector(".button")!;
       const buttonText = buttonElement.textContent!;
 
-      expect(buttonElement).toBeInstanceOf(HTMLButtonElement);
+      expect(buttonElement).toBeInstanceOf(HTMLAnchorElement);
       expect(buttonText).toBe("⇐ Previous 8 pokemons");
     });
   });

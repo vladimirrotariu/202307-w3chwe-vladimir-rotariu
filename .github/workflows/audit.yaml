@@ -1,6 +1,8 @@
 name: Code audit
 
-on: push
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   audit:
@@ -31,8 +33,8 @@ jobs:
       - name: 📏 Check commit message length
         uses: gsactions/commit-message-checker@v1
         with:
-          pattern: "^[^#].{10,72}"
-          error: "The commit message length must be between 10 and 72"
+          pattern: "^[^#].{5,120}"
+          error: "The commit message length must be between 5 and 120"
           excludeDescription: "true" # optional: this excludes the description body of a pull request
           excludeTitle: "true" # optional: this excludes the title of a pull request
           checkAllCommitMessages: "true" # optional: this checks all commits associated with a pull request

@@ -3,6 +3,7 @@
 
 body {
   font-family: $font-family;
+  font-size: $font-size;
 
   .container-fluid {
     padding: 0;
@@ -26,6 +27,7 @@ header {
   .navbar__controls {
     display: flex;
     gap: $gap-standard;
+    width: 80%;
 
     @media (max-width: $medium-screen) {
       flex-direction: column;
@@ -43,7 +45,9 @@ header {
       background-color: $primary-color;
       color: $button-text-color;
       padding: $small-padding $standard-padding;
-      border: none;
+      border: 2px;
+      border-color: white;
+      border-radius: 20px;
       cursor: pointer;
 
       &:hover, &:focus {
@@ -59,6 +63,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: $gap-standard;
+    margin-top: 10px;
 
     @media (max-width: $extra-small-screen) {
       gap: $gap-medium;
@@ -77,6 +82,12 @@ main {
       background-color: $card-background;
       padding: $standard-padding;
       box-shadow: $small-shadow;
+      width: $image-card-width;
+      height: $image-card-height;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       transition: all 0.3s ease;
 
       &:hover {
@@ -88,9 +99,18 @@ main {
       }
     }
 
+    h2 {
+      width: 90%;
+      height: 10%;
+      font-size: $font-size*1.2;
+      justify-content: center;
+    }
+
     a {
       text-decoration: none;
       color: inherit;
+      width: 200px;
+      height: 200px;
 
       &:focus {
         outline: 3px solid $outline-color;

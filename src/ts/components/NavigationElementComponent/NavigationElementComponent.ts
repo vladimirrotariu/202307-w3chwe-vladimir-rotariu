@@ -3,8 +3,8 @@ import Component from "../Component/Component.js";
 class NavigationElementComponent extends Component {
   constructor(
     parentElement: Element,
-    public readonly textNavigationElement: string,
-    private readonly actionOnClick: () => void
+    private readonly textNavigationElement: string,
+    private readonly actionOnClick = console.clear,
   ) {
     const tag = "li";
     const className = "controls__navigation-element";
@@ -14,7 +14,7 @@ class NavigationElementComponent extends Component {
   render() {
     this.parentElement.append(this.element);
     this.element.innerHTML = `
-    <button class="button">${this.textNavigationElement}</button>
+    <a class="button">${this.textNavigationElement}</a>
     `;
     const buttonElement = this.element.querySelector(".button")!;
     buttonElement.addEventListener("click", () => {
