@@ -4,6 +4,7 @@
 body {
   font-family: $font-family;
   font-size: $font-size;
+  background-image: url("https://images6.alphacoders.com/661/661968.png");
   display: flex;
   flex-direction: column;
   box-sizing: content-box;
@@ -63,7 +64,6 @@ header {
 main {
 
   flex-grow: 1;
-  background-image: url("https://images6.alphacoders.com/661/661968.png");
   .pokemon-list {
     display: flex;
     flex-wrap: wrap;

@@ -14,7 +14,7 @@ class ListComponent extends Component {
 
   render() {
     this.parentElement.append(this.element);
-
+    console.log(this.pokemons);
     let pokemonListElements = "";
     this.pokemons.forEach((pokemon) => {
       const namePokemon = pokemon.name.toUpperCase();
