@@ -9,7 +9,6 @@ describe("Given a NavigationElementComponent component that will be part of the 
       const navigationElementComponent = new NavigationElementComponent(
         containerElement,
         textNavigationElement,
-        console.log
       );
       navigationElementComponent.render();
 
@@ -29,7 +28,6 @@ describe("Given a NavigationElementComponent component that will be part of the 
       const navigationElementComponent = new NavigationElementComponent(
         containerElement,
         textNavigationElement,
-        console.log
       );
       navigationElementComponent.render();
 

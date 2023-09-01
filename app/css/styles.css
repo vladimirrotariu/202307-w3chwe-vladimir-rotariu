@@ -55,7 +55,7 @@ header .navbar__controls {
   gap: 1rem;
   width: 80%;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   header .navbar__controls {
     flex-direction: column;
   }
@@ -88,7 +88,7 @@ main .pokemon-list {
   gap: 1rem;
   margin-top: 10px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 320px) {
   main .pokemon-list {
     gap: 0.8rem;
   }
@@ -105,7 +105,7 @@ main .pokemon-list {
   }
 }
 main .pokemon-list li {
-  background-color: #79efb4;
+  background-color: #007bff;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 240px;
@@ -116,17 +116,24 @@ main .pokemon-list li {
   justify-content: center;
   transition: all 0.3s ease;
 }
-main .pokemon-list li:hover {
+main .pokemon-list li:hover, main .pokemon-list li:focus {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 main .pokemon-list li:focus-within {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
-main .pokemon-list h2 {
+main .pokemon-list h2, main .pokemon-list h3 {
   width: 90%;
+  justify-content: center;
+  color: #fff;
+}
+main .pokemon-list h2 {
   height: 10%;
   font-size: 1.2rem;
-  justify-content: center;
+}
+main .pokemon-list h3 {
+  height: 7%;
+  font-size: 0.9rem;
 }
 main .pokemon-list a {
   text-decoration: none;

@@ -29,7 +29,7 @@ header {
     gap: $gap-standard;
     width: 80%;
 
-    @media (max-width: $medium-screen) {
+    @media (max-width: $small-screen) {
       flex-direction: column;
     }
 
@@ -79,7 +79,7 @@ main {
     }
 
     li {
-      background-color: $card-background;
+      background-color: $primary-color;
       padding: $standard-padding;
       box-shadow: $small-shadow;
       width: $image-card-width;
@@ -90,7 +90,7 @@ main {
       justify-content: center;
       transition: all 0.3s ease;
 
-      &:hover {
+      &:hover, &:focus {
         box-shadow: $hover-shadow;
       }
 
@@ -99,11 +99,20 @@ main {
       }
     }
 
-    h2 {
+    h2, h3 {
       width: 90%;
+      justify-content: center;
+      color: $button-text-color;
+    }
+
+    h2 {
       height: 10%;
       font-size: $font-size*1.2;
-      justify-content: center;
+    }
+
+    h3 {
+      height: 7%;
+      font-size: $font-size*0.9;
     }
 
     a {

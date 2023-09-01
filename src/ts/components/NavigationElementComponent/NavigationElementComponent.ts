@@ -4,6 +4,7 @@ class NavigationElementComponent extends Component {
   constructor(
     parentElement: Element,
     private readonly textNavigationElement: string,
+    private readonly redirectPageUrl = "",
     private readonly actionOnClick = console.clear,
   ) {
     const tag = "li";
@@ -14,7 +15,7 @@ class NavigationElementComponent extends Component {
   render() {
     this.parentElement.append(this.element);
     this.element.innerHTML = `
-    <a class="button">${this.textNavigationElement}</a>
+    <a class="button" href="${this.redirectPageUrl}">${this.textNavigationElement}</a>
     `;
     const buttonElement = this.element.querySelector(".button")!;
     buttonElement.addEventListener("click", () => {

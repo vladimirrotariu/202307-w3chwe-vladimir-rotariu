@@ -17,14 +17,14 @@ class ListComponent extends Component {
     let pokemonListElements = "";
     this.pokemonLinks.forEach((pokemonLink) => {
       const namePokemon = pokemonLink.name.toUpperCase();
-      const pokemonPagePath = `${"/" + namePokemon}`;
 
       const anchorElement = `
       <li>
         <h2>${namePokemon}</h2>
-          <a href=${pokemonPagePath}> 
-          <img src="${pokemonLink.url}" alt="${namePokemon}">
-          </a>
+        <h3>Click on the image for more!</h3>
+        <a href="pokemonPage${namePokemon}.html"> 
+        <img src="${pokemonLink.url}" alt="${namePokemon}">
+        </a>
       </li>
       `;
       pokemonListElements += anchorElement;
