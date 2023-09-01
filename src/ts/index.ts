@@ -4,7 +4,7 @@ import NavigationElementComponent from "./components/NavigationElementComponent/
 import fetchPokemonsFromApi from "./utils/fetchfromPokeApi.js";
 
 const renderComponentsHomePage = async () => {
-  const pokemonLinks = await fetchPokemonsFromApi();
+  const pokemons = await fetchPokemonsFromApi();
   const appComponent = new AppComponent();
   appComponent.render();
 
@@ -18,7 +18,7 @@ const renderComponentsHomePage = async () => {
   navigationElementComponentTitle.render();
 
   const redirectPageUrlPokeApi = "https://pokeapi.co/";
-  const textNavigationElementPrevious = "API we used";
+  const textNavigationElementPrevious = "The API we used";
   const navigationElementComponentPrevious = new NavigationElementComponent(
     appComponent.listNavigationControls,
     textNavigationElementPrevious,
@@ -32,7 +32,7 @@ const renderComponentsHomePage = async () => {
   const listComponent = new ListComponent(
     mainElement,
     classNameListComponent,
-    pokemonLinks
+    pokemons
   );
   listComponent.render();
 }

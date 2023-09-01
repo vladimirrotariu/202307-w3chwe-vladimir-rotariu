@@ -21,7 +21,7 @@ header {
     align-items: center;
     padding: $standard-padding;
 
-    a:focus, button:focus {
+    a:focus, button:focus, button:hover {
       outline: 3px solid $outline-color;
     }
   }

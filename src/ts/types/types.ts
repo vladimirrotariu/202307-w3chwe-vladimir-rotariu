@@ -1,19 +1,14 @@
-export interface PokemonLink {
-  name: string;
-  url: string;
+export interface Ability {
+  nameAbility : string;
+  visibilityAbility : boolean;
 }
-
-export type PokemonLinks = PokemonLink[];
 
 export interface Pokemon {
-  name: string;
-  abilities: Ability[];
-  imageUrl: string;
-  backImageUrl: string;
-  combatOnly: boolean;
+  name : string;
+  abilities : Ability[];
+  imageUrl : string;
+  backImageUrl : string;
 }
 
-export interface Ability {
-  nameAbility: string;
-  visibilityAbility: boolean;
-}
+
+export type Pokemons = Pokemon[];

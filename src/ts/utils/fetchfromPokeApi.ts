@@ -1,42 +1,61 @@
 const fetchPokemonsFromApi = async () => {
-  const pokemonLinks = [];
+  const pokemons = [];
 
   try {
-    const responseGeneral = await fetch("https://pokeapi.co/api/v2/pokemon-form/?offset=0&limit=3");
-     
-    const {results : [{name : pokemonOneName, url: urlInfoPokemonOne},
-       {name : pokemonTwoName, url: urlInfoPokemonTwo}, {name : pokemonThreeName, url: urlInfoPokemonThree}]} = 
-       await responseGeneral.json() as {
-        results : [
-          {name : string, url : string},
-          {name : string, url : string},
-          {name : string, url : string}
-        ]
+    // Fetch general Pokemon info
+    const responseGeneral = await fetch(import.meta.env.VITE_POKE_FORM_API_URL as string);
+
+    const {
+      results: [
+        { name: pokemonOneName, url: urlInfoPokemonOne },
+        { name: pokemonTwoName, url: urlInfoPokemonTwo },
+        { name: pokemonThreeName, url: urlInfoPokemonThree }
+      ]
+    } = await responseGeneral.json() as {
+      results: [
+        { name: string, url: string },
+        { name: string, url: string },
+        { name: string, url: string }
+      ]
     };
 
-    const responsePokemonOne = await fetch(urlInfoPokemonOne);
-    const {sprites : {front_default : imageUrlPokemonOne}} = await responsePokemonOne.json() as 
-    {sprites : {front_default : string}};
-    const pokemonOneLink = {name : pokemonOneName, url : imageUrlPokemonOne};
-    pokemonLinks.push(pokemonOneLink);
+    // Array to store Pokémon details
+    const pokemonDetails = [urlInfoPokemonOne, urlInfoPokemonTwo, urlInfoPokemonThree].map(async (url, index) => {
+      const responsePokemon = await fetch(url);
+      const {
+        sprites: { front_default: urlImage, back_default: imageBackUrl }
+      } = await responsePokemon.json() as { sprites : { front_default: string, back_default: string}};
 
-    const responsePokemonTwo = await fetch(urlInfoPokemonTwo);
-    const {sprites : {front_default : imageUrlPokemonTwo}} = await responsePokemonTwo.json() as 
-    {sprites : {front_default : string}};
-    const pokemonTwoLink = {name : pokemonTwoName, url: imageUrlPokemonTwo};
-    pokemonLinks.push(pokemonTwoLink);
+      const pokemonName = [pokemonOneName, pokemonTwoName, pokemonThreeName][index];
 
-    const responsePokemonThree = await fetch(urlInfoPokemonThree);
-    const {sprites : {front_default : imageUrlPokemonThree}} = await responsePokemonThree.json() as 
-    {sprites : {front_default : string}};
-    const pokemonThreeLink = {name : pokemonThreeName, url: imageUrlPokemonThree};
-    pokemonLinks.push(pokemonThreeLink);
+      const responseAbilities = await fetch(`${import.meta.env.VITE_POKEMON_URL as string}${index + 1}`);
+      const result = await responseAbilities.json() as { abilities : [{ ability : { name : string }, is_hidden : boolean }, { ability : { name : string }, is_hidden : boolean }] };
 
-  } catch(error) {
-     console.log("Fetch error: ", error);
+      const firstAbility = result.abilities[0];
+      const secondAbility = result.abilities[1];
+
+      const { ability : { name : nameAbilityOne }, is_hidden : visibilityAbilityOne } = firstAbility;
+      const { ability : { name : nameAbilityTwo }, is_hidden : visibilityAbilityTwo } = secondAbility;
+
+      const abilities = [{nameAbility : nameAbilityOne, visibilityAbility : visibilityAbilityOne}, {nameAbility : nameAbilityTwo, visibilityAbility : visibilityAbilityTwo}];
+
+      return {
+        name : pokemonName,
+        imageUrl : urlImage,
+        abilities, 
+        backImageUrl : imageBackUrl
+      };
+    });
+
+    // Wait for all promises to resolve and push results to pokemons
+    const resolvedPokemonDetails = await Promise.all(pokemonDetails);
+    pokemons.push(...resolvedPokemonDetails);
+    
+  } catch (error) {
+    console.log("Fetch error: ", error);
   }
 
-  return pokemonLinks;
-}
+  return pokemons;
+};
 
 export default fetchPokemonsFromApi;
