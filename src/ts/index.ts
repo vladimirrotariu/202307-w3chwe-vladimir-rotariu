@@ -1,9 +1,10 @@
 import AppComponent from "./components/AppComponent/AppComponent.js";
 import ListComponent from "./components/ListComponent/ListComponent.js";
 import NavigationElementComponent from "./components/NavigationElementComponent/NavigationElementComponent.js";
-import { pokemonLinksTesting } from "./utils/testData.js";
+import fetchPokemonsFromApi from "./utils/fetchfromPokeApi.js";
 
-const renderComponentsHomePage = () => {
+const renderComponentsHomePage = async () => {
+  const pokemonLinks = await fetchPokemonsFromApi();
   const appComponent = new AppComponent();
   appComponent.render();
 
@@ -31,9 +32,9 @@ const renderComponentsHomePage = () => {
   const listComponent = new ListComponent(
     mainElement,
     classNameListComponent,
-    pokemonLinksTesting
+    pokemonLinks
   );
   listComponent.render();
 }
 
-renderComponentsHomePage();
+await renderComponentsHomePage();
