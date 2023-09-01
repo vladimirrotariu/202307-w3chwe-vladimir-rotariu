@@ -87,10 +87,10 @@ describe("Given a PokemonInfoComponent component", () => {
         pokemonAbilitiesElements[1].textContent!;
 
       expect(pokemonFireAbilityComponent).toStrictEqual(
-        abilityPokemonFire.nameAbility.toUpperCase() + " visible"
+        abilityPokemonFire.nameAbility.toUpperCase() + " hidden"
       );
       expect(pokemonFlyAbilityComponent).toStrictEqual(
-        abilityPokemonFly.nameAbility.toUpperCase() + " hidden"
+        abilityPokemonFly.nameAbility.toUpperCase() + " visible"
       );
     });
   });
