@@ -9,10 +9,9 @@ describe("Given a PokemonInfoComponent component", () => {
         "https://www.pngmart.com/files/11/Pokemon-Bulbasaur-PNG-Pic.png";
       const bulbasaur: Pokemon = {
         name: "",
-        abilities: [],
-        imageUrl: pictureBulbasaurUrl,
-        backImageUrl: "",
-        combatOnly: false,
+        abilities : [{ nameAbility : "", visibilityAbility : true}],
+        imageUrl : pictureBulbasaurUrl,
+        backImageUrl : ""
       };
 
       const pokemonInfoComponent = new PokemonInfoComponent(
@@ -34,10 +33,9 @@ describe("Given a PokemonInfoComponent component", () => {
       const namePokemon = "CHARMANDER";
       const charmander: Pokemon = {
         name: namePokemon,
-        abilities: [],
+        abilities : [{ nameAbility : "", visibilityAbility : true}],
         imageUrl: "",
-        backImageUrl: "",
-        combatOnly: false,
+        backImageUrl: ""
       };
 
       const pokemonInfoComponent = new PokemonInfoComponent(
@@ -72,8 +70,7 @@ describe("Given a PokemonInfoComponent component", () => {
         name: "",
         abilities: abilitiesPokemon,
         imageUrl: "",
-        backImageUrl: "",
-        combatOnly: false,
+        backImageUrl: ""
       };
 
       const pokemonInfoComponent = new PokemonInfoComponent(
@@ -90,38 +87,11 @@ describe("Given a PokemonInfoComponent component", () => {
         pokemonAbilitiesElements[1].textContent!;
 
       expect(pokemonFireAbilityComponent).toStrictEqual(
-        abilityPokemonFire.nameAbility.toUpperCase() + " visible"
+        abilityPokemonFire.nameAbility.toUpperCase() + " hidden"
       );
       expect(pokemonFlyAbilityComponent).toStrictEqual(
-        abilityPokemonFly.nameAbility.toUpperCase() + " hidden"
+        abilityPokemonFly.nameAbility.toUpperCase() + " visible"
       );
-    });
-  });
-
-  describe("When it is given a pokemon that is only for combat", () => {
-    test("Then it shows that the pokemon is only for combat", () => {
-      const containerElement = document.createElement("div");
-      const isCombatOnly = true;
-      const charmander: Pokemon = {
-        name: "",
-        abilities: [],
-        imageUrl: "",
-        backImageUrl: "",
-        combatOnly: isCombatOnly,
-      };
-
-      const pokemonInfoComponent = new PokemonInfoComponent(
-        containerElement,
-        charmander
-      );
-      pokemonInfoComponent.render();
-      const pokemonCombatElement = containerElement.querySelector(
-        ".pokemon__combat-state > span"
-      )!;
-      const pokemonCombatOnlyState: boolean =
-        pokemonCombatElement.textContent === "YES";
-
-      expect(pokemonCombatOnlyState).toBeTruthy();
     });
   });
 
@@ -132,10 +102,9 @@ describe("Given a PokemonInfoComponent component", () => {
         "https://www.pngmart.com/files/12/Pokemon-Bulbasaur-PNG-Pic.png";
       const bulbasaur: Pokemon = {
         name: "",
-        abilities: [],
+        abilities : [{ nameAbility : "", visibilityAbility : true}],
         imageUrl: "",
-        backImageUrl: pictureBulbasaurBackUrl,
-        combatOnly: false,
+        backImageUrl: pictureBulbasaurBackUrl
       };
 
       const pokemonInfoComponent = new PokemonInfoComponent(

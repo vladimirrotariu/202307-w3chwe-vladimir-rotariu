@@ -18,8 +18,7 @@ export default defineConfig({
       include: ["**/components/**/*.{ts,tsx}"],
       exclude: [
         "**/*.test.{ts,tsx}",
-        "**/AppComponent/AppComponent.ts",
-        "**/Component/Component.tsx",
+        "**/AppComponent/AppComponent.ts"
       ],
     },
   },

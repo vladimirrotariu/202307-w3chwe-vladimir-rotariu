@@ -6,9 +6,9 @@ class AppComponent extends Component {
   constructor() {
     const parentElementTag = "header";
     const parentElement = document.createElement(parentElementTag);
-
     const tag = "nav";
     const className = "navbar";
+
     super(parentElement, tag, className);
   }
 

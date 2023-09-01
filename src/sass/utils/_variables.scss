@@ -1,6 +1,6 @@
 // Font
 $font-family: 'Roboto', Arial, sans-serif;
-$font-size: 1rem;
+$font-size: 1.1rem;
 
 // Colors
 $primary-color: #007bff;
@@ -16,18 +16,19 @@ $gap-medium: 0.8rem;
 $gap-small: 0.6rem;
 
 // Breakpoints
-$extra-small-screen: 1200px;
+$extra-small-screen: 320px;
 $medium-screen: 992px;
 $small-screen: 768px;
+$large-screen: 1024px;
 
 // Box Shadows
 $small-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-$hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+$hover-shadow: 0 8px 16px rgba(255, 255, 255, 0.8);
 $focus-box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 
 // Image Dimensions
-$image-width: 180px;
-$image-height: 180px;
+$image-width: 184px;
+$image-height: 184px;
 
 // Image Card Dimensions
 $image-card-width: 240px;

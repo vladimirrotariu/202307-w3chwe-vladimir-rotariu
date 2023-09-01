@@ -1,11 +1,12 @@
-import { type PokemonLinks } from "../../types/types.js";
+import { type Pokemons } from "../../types/types.js";
+import { removeActionOnClick } from "../../utils/actions.js";
 import Component from "../Component/Component.js";
 
 class ListComponent extends Component {
   constructor(
     parentElement: Element,
     className: string,
-    private readonly pokemonLinks: PokemonLinks
+    private readonly pokemons: Pokemons
   ) {
     const tag = "ul";
     super(parentElement, tag, className);
@@ -13,23 +14,27 @@ class ListComponent extends Component {
 
   render() {
     this.parentElement.append(this.element);
-
     let pokemonListElements = "";
-    this.pokemonLinks.forEach((pokemonLink) => {
-      const namePokemon = pokemonLink.name.toUpperCase();
-      const pokemonPagePath = `${"/" + namePokemon}`;
+    this.pokemons.forEach((pokemon) => {
+      const namePokemon = pokemon.name.toUpperCase();
 
       const anchorElement = `
       <li>
         <h2>${namePokemon}</h2>
-          <a href=${pokemonPagePath}> 
-          <img src="${pokemonLink.url}" alt="${namePokemon}">
-          </a>
+        <h3>Click on the image for more!</h3>
+        <img src="${pokemon.imageUrl}" alt="${namePokemon}">
       </li>
       `;
       pokemonListElements += anchorElement;
     });
+
     this.element.innerHTML = pokemonListElements;
+
+    document.querySelectorAll("img").forEach((image, index) => {
+      image.addEventListener("click", () => {
+        removeActionOnClick(this.pokemons[index]);
+      })
+    });
   }
 }
 

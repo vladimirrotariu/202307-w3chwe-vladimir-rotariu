@@ -1,6 +1,6 @@
 abstract class Component {
   readonly element: Element;
-  readonly containerElement = document.querySelector(".container-fluid")!;
+  readonly containerElement = document.querySelector(".container")!;
 
   constructor(
     protected readonly parentElement: Element,
