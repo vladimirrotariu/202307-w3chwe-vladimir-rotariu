@@ -1,4 +1,5 @@
 import { type PokemonLinks } from "../../types/types.js";
+import { removeActionOnClick } from "../../utils/actions.js";
 import Component from "../Component/Component.js";
 
 class ListComponent extends Component {
@@ -27,7 +28,14 @@ class ListComponent extends Component {
       `;
       pokemonListElements += anchorElement;
     });
+
     this.element.innerHTML = pokemonListElements;
+
+    document.querySelectorAll("img").forEach((image) => {
+      image.addEventListener("click", () => {
+        removeActionOnClick();
+      })
+    });
   }
 }
 
