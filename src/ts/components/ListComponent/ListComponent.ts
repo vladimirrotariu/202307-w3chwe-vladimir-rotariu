@@ -14,7 +14,6 @@ class ListComponent extends Component {
 
   render() {
     this.parentElement.append(this.element);
-    console.log(this.pokemons);
     let pokemonListElements = "";
     this.pokemons.forEach((pokemon) => {
       const namePokemon = pokemon.name.toUpperCase();
@@ -31,9 +30,9 @@ class ListComponent extends Component {
 
     this.element.innerHTML = pokemonListElements;
 
-    document.querySelectorAll("img").forEach((image) => {
+    document.querySelectorAll("img").forEach((image, index) => {
       image.addEventListener("click", () => {
-        removeActionOnClick();
+        removeActionOnClick(this.pokemons[index]);
       })
     });
   }

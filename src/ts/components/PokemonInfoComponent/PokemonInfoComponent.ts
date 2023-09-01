@@ -16,7 +16,7 @@ class PokemonInfoComponent extends Component {
         const pokemonAbilityListItemElement = `
       <li>
         <span>${ability.nameAbility.toUpperCase()} ${
-          ability.visibilityAbility ? "visible" : "hidden"
+          ability.visibilityAbility ? "hidden" : "visible"
         }</span>
       </li>
       `;
@@ -25,27 +25,29 @@ class PokemonInfoComponent extends Component {
       .join("\n");
 
     this.element.innerHTML = `
-      <div class="pokemon__picture">
-        <img src="${
-          this.pokemon.imageUrl
-        }" alt="A picture of ${this.pokemon.name}">
-      </div>
-      <div class="pokemon__name">
-        <h2>${this.pokemon.name.toUpperCase()}</h2>
-      </div>
-      <div class="pokemon__abilities">
-        <h2>Abilities</h2>
-        <ul>
-          ${pokemonAbilitiesListItemElements}
-        </ul>
-      </div>
-      <div class="pokemon__back">
-        <h2>Back</h2>
+      <div class="pokemon">
+        <div class="pokemon__picture">
           <img src="${
-            this.pokemon.backImageUrl
-          }"  alt="A picture of the back of ${
-        this.pokemon.name
-      }">
+            this.pokemon.imageUrl
+          }" alt="A picture of ${this.pokemon.name}">
+        </div>
+        <div class="pokemon__name">
+          <h2>${this.pokemon.name.toUpperCase()}</h2>
+        </div>
+        <div class="pokemon__abilities">
+          <h2>Abilities</h2>
+          <ul>
+            ${pokemonAbilitiesListItemElements}
+          </ul>
+        </div>
+        <div class="pokemon__back">
+          <h2>Back</h2>
+            <img src="${
+              this.pokemon.backImageUrl
+            }"  alt="A picture of the back of ${
+          this.pokemon.name
+        }">
+        </div>
       </div>
     `;
   }

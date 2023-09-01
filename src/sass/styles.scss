@@ -1,10 +1,11 @@
 @import "utils/variables";
 @import "utils/resets";
 
+// Styles for both Page 1 and Page 2
 body {
   font-family: $font-family;
   font-size: $font-size;
-  background-image: url("https://images6.alphacoders.com/661/661968.png");
+  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
   display: flex;
   flex-direction: column;
   box-sizing: content-box;
@@ -28,7 +29,6 @@ header {
   }
 
   .navbar__controls {
-
     display: flex;
     gap: $gap-standard;
     width: 100%;
@@ -62,8 +62,9 @@ header {
 }
 
 main {
-
   flex-grow: 1;
+  
+  // Styles for Page 1
   .pokemon-list {
     display: flex;
     flex-wrap: wrap;
@@ -85,7 +86,7 @@ main {
     }
 
     li {
-      background-color: $primary-color;
+      background-image: url("https://images6.alphacoders.com/661/661968.png");
       padding: $standard-padding;
       box-shadow: $small-shadow;
       width: $image-card-width;
@@ -114,12 +115,12 @@ main {
 
     h2 {
       height: 7%;
-      font-size: $font-size*1.1;
+      font-size: $font-size * 1.1;
     }
 
     h3 {
       height: 4%;
-      font-size: $font-size*0.8;
+      font-size: $font-size * 0.8;
     }
 
     img {
@@ -128,6 +129,78 @@ main {
 
       &:focus {
         outline: 3px solid $outline-color;
+      }
+    }
+  }
+
+  // New styles for Page 2
+  .pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $standard-padding;
+    background-image: url("https://images6.alphacoders.com/661/661968.png");
+    border-radius: 20px;
+    box-shadow: $small-shadow;
+    width: $image-card-width;
+    margin: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__picture {
+      img {
+        max-width: $image-width*1.3;
+        height: $image-height*1.3;
+
+        &:focus {
+          outline: 3px solid $outline-color;
+        }
+      }
+    }
+
+    &__name {
+      h2 {
+        font-size: $font-size * 1.5;
+        color: $button-text-color;
+        margin-top: 10px;
+      }
+    }
+
+    &__abilities {
+      h2 {
+        font-size: $font-size * 1.1;
+        color: $button-text-color;
+        margin-top: 10px;
+      }
+      
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          font-size: $font-size;
+          color: $button-text-color;
+        }
+      }
+    }
+
+    &__back {
+      h2 {
+        font-size: $font-size * 1.1;
+        color: $button-text-color;
+        margin-top: 10px;
+      }
+      
+      img {
+        max-width: $image-width * 0.7;
+        height: $image-height * 0.7;
+
+        &:focus {
+          outline: 3px solid $outline-color;
+        }
       }
     }
   }
