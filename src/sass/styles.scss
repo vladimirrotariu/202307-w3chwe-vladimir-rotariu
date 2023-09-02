@@ -64,7 +64,7 @@ header {
 main {
   flex-grow: 1;
   
-  // Styles for Page 1
+  // Styles for PokeDex  homepage
   .pokemon-list {
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +93,6 @@ main {
       height: $image-card-height;
       border-radius: 20px;
       display: flex;
-      height: 100%;
       flex-direction: column;
       align-items: center;
       transition: all 0.3s ease;
@@ -124,8 +123,8 @@ main {
     }
 
     img {
-      max-width: $image-width;
-      height: $image-height;
+      max-width: $image-width*1.4;
+      height: $image-height*1.4;
 
       &:focus {
         outline: 3px solid $outline-color;
@@ -133,17 +132,18 @@ main {
     }
   }
 
-  // New styles for Page 2
+  // Styles for pokemon description page
   .pokemon {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px auto auto auto;
     padding: $standard-padding;
     background-image: url("https://images6.alphacoders.com/661/661968.png");
     border-radius: 20px;
     box-shadow: $small-shadow;
-    width: $image-card-width;
-    margin: auto;
+    height: $image-card-height-pokemon-info*1.2;
+    width: $image-card-width*1.2;
 
     position: absolute;
     top: 50%;
@@ -152,8 +152,8 @@ main {
 
     &__picture {
       img {
-        max-width: $image-width*1.3;
-        height: $image-height*1.3;
+        max-width: $image-width*1.4;
+        height: $image-height*1.4;
 
         &:focus {
           outline: 3px solid $outline-color;
@@ -195,8 +195,8 @@ main {
       }
       
       img {
-        max-width: $image-width * 0.7;
-        height: $image-height * 0.7;
+        max-width: $image-width * 1.3;
+        height: $image-height * 1.3;
 
         &:focus {
           outline: 3px solid $outline-color;

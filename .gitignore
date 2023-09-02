@@ -2,3 +2,10 @@ node_modules
 .DS_Store
 dist
 *.css
+*.css.map
+coverage/lcov-report/Component/
+coverage/lcov-report/ListComponent/
+coverage/lcov-report/NavigationElementComponent/
+coverage/lcov-report/PokemonInfoComponent/
+
+
