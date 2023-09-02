@@ -16,8 +16,8 @@ class PokemonInfoComponent extends Component {
         const pokemonAbilityListItemElement = `
       <li>
         <span>${ability.nameAbility.toUpperCase()} ${
-          ability.visibilityAbility ? "hidden" : "visible"
-        }</span>
+          ability.visibilityAbility ? "hidden" : "visible"}
+        </span>
       </li>
       `;
         return pokemonAbilityListItemElement;

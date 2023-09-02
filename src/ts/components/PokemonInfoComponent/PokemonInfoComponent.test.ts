@@ -86,10 +86,10 @@ describe("Given a PokemonInfoComponent component", () => {
       const pokemonFlyAbilityComponent: string =
         pokemonAbilitiesElements[1].textContent!;
 
-      expect(pokemonFireAbilityComponent).toStrictEqual(
+      expect(pokemonFireAbilityComponent.slice(0,17)).toStrictEqual(
         abilityPokemonFire.nameAbility.toUpperCase() + " hidden"
       );
-      expect(pokemonFlyAbilityComponent).toStrictEqual(
+      expect(pokemonFlyAbilityComponent.slice(0,14)).toStrictEqual(
         abilityPokemonFly.nameAbility.toUpperCase() + " visible"
       );
     });

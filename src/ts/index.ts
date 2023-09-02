@@ -3,9 +3,11 @@ import ListComponent from "./components/ListComponent/ListComponent.js";
 import NavigationElementComponent from "./components/NavigationElementComponent/NavigationElementComponent.js";
 import fetchPokemonsFromApi from "./utils/fetchfromPokeApi.js";
 
-const renderComponentsHomePage = async () => {
-  const pokemons = await fetchPokemonsFromApi();
-  const appComponent = new AppComponent();
+const renderComponentsHomePage = () => {
+  let pokemons;
+  (async () => {
+      pokemons = await fetchPokemonsFromApi();
+      const appComponent = new AppComponent();
   appComponent.render();
 
   const textNavigationElementTitle = "PokeDex";
@@ -35,6 +37,11 @@ const renderComponentsHomePage = async () => {
     pokemons
   );
   listComponent.render();
+  })();
+
 }
 
-await renderComponentsHomePage();
+(async () => {
+  renderComponentsHomePage();
+})();
+
