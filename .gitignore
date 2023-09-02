@@ -1,7 +1,8 @@
 node_modules
 .DS_Store
-dist
 *.css
+!base.css
+dist
 *.css.map
 coverage/lcov-report/Component/
 coverage/lcov-report/ListComponent/
