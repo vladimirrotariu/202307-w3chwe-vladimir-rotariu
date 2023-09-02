@@ -48,7 +48,7 @@ class NavigationElementComponent extends Component {
 * Testing: JEST
 * CI/CD: GitHub Actions, SonarCloud.
 ## Testing
-We included here the [istanbul report](https://oop-components-testing-ofq15ebub-vladimirrotariu.vercel.app/coverage/lcov-report/index.html) for component-wise testing. If one wishes to generate the individual istanbul reports, the following script might come handy after cloning the repository and installing the node packages:
+We included here the istanbul report for component-wise testing. If one wishes to generate the individual istanbul reports, the following script might come handy after cloning the repository and installing the node packages:
 ```
 npm run test:coverage
 
