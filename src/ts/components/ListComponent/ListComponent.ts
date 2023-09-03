@@ -1,7 +1,8 @@
 import { type Pokemons } from "../../types/types.js";
-import { removeActionOnClick as removeAndRenderActionOnClick } from "../../utils/actions.js";
+import { removeAndRenderActionOnClick } from "../../utils/actions.js";
 import Component from "../Component/Component.js";
 
+// Define a ListComponent class that extends the generic Component class
 class ListComponent extends Component {
   constructor(
     parentElement: Element,
@@ -12,9 +13,12 @@ class ListComponent extends Component {
     super(parentElement, tag, className);
   }
 
+  // Implement the render method to build the list component
   render() {
     this.parentElement.append(this.element);
     let pokemonListElements = "";
+
+    // Loop through each Pokemon and create its HTML structure
     this.pokemons.forEach((pokemon) => {
       const namePokemon = pokemon.name.toUpperCase();
 
@@ -25,13 +29,18 @@ class ListComponent extends Component {
         <img src="${pokemon.imageUrl}" alt="${namePokemon}" width="125" height="125">
       </li>
       `;
+
+      // Concatenate the current Pokemon's HTML to the existing string
       pokemonListElements += anchorElement;
     });
 
     this.element.innerHTML = pokemonListElements;
 
+    // Add a click event listener to each image
+
     document.querySelectorAll("img").forEach((image, index) => {
       image.addEventListener("click", () => {
+        // Execute removeAndRenderActionOnClick function when an image is clicked
         removeAndRenderActionOnClick(this.pokemons[index]);
       })
     });

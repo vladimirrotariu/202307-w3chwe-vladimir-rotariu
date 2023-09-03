@@ -1,6 +1,7 @@
 import { type Pokemon } from "../../types/types.js";
 import Component from "../Component/Component.js";
 
+// Define a new class called PokemonInfoComponent that extends the generic Component class
 class PokemonInfoComponent extends Component {
   constructor(parentElement: Element, private readonly pokemon: Pokemon) {
     const tag = "main";
@@ -8,9 +9,11 @@ class PokemonInfoComponent extends Component {
     super(parentElement, tag, className);
   }
 
+  // Define the render method to construct the component's HTML
   render() {
     this.parentElement.append(this.element);
 
+    // Generate a list of abilities and their visibility status
     const pokemonAbilitiesListItemElements = this.pokemon.abilities
       .map((ability) => {
         const pokemonAbilityListItemElement = `
@@ -21,9 +24,9 @@ class PokemonInfoComponent extends Component {
       </li>
       `;
         return pokemonAbilityListItemElement;
-      })
-      .join("\n");
-
+      }).join("\n");
+    
+    // Populate the inner HTML of the component
     this.element.innerHTML = `
       <div class="pokemon">
         <div class="pokemon__picture">
