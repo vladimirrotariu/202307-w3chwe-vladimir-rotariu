@@ -30,10 +30,14 @@ class NavigationElementComponent extends Component {
 
   render() {
     this.parentElement.append(this.element);
+    
+    const text = this.textNavigationElement;
     this.element.innerHTML = `
-    <a class="button" href="${this.redirectPageUrl}">${this.textNavigationElement}</a>
+    <a class="button" href="${this.redirectPageUrl}" aria-label="${text}">${text}</a>
     `;
+
     const buttonElement = this.element.querySelector(".button")!;
+
     buttonElement.addEventListener("click", () => {
       this.actionOnClick();
     });
@@ -41,15 +45,15 @@ class NavigationElementComponent extends Component {
 }
 ``` 
 
-* Companion website to visualize components: [OOP_components](https://oop-components-testing-ofq15ebub-vladimirrotariu.vercel.app/).
+* Companion website to visualize components: [COMPANION_WEBSITE_OOP_components](https://oop-components-testing-ofq15ebub-vladimirrotariu.vercel.app/).
 
 ## Tech stack:
-* Web: TypeScript, HTML5, Sass.
+* Web: TypeScript, HTML5, CSS3/Sass.
 * Testing: JEST
 * CI/CD: GitHub Actions, SonarCloud.
-* Interacting with RESTful API
+* Interacting with a RESTful API
 ## Testing
-We included here the istanbul report for component-wise testing. If one wishes to generate the individual istanbul reports, the following script might come handy after cloning the repository and installing the node packages:
+We included here ONLY istanbul report for component-wise testing. If one wishes to generate the individual istanbul reports, the following script might come handy after cloning the repository and installing the node packages:
 ```
 npm run test:coverage
 

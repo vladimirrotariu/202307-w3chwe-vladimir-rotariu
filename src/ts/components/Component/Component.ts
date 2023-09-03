@@ -1,3 +1,4 @@
+// Define a generic Component class
 abstract class Component {
   readonly element: Element;
   readonly containerElement = document.querySelector(".container")!;
